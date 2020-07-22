@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# author:  Bas Huis
+# website: https://github.com/bas080/date-range
+# created: Wed Jul 22 15:54:40 CEST 2020
+# changed: Wed Jul 22 15:54:31 CEST 2020
+# license: GNU General Public License 3.0
+
+[[ "$1" = "--help" ]] && {
+  echo 'date-range <template> [<date options>...]'
+  exit
+}
+
+template="${1:-+%sdays}"; shift;
+
+export LANG;
+
+xargs printf "$template\n" | xargs -0 -d '\n' -l date "$@" -d
