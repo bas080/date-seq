@@ -1,6 +1,6 @@
 # Date Seq
 
-Easily create a sequance of dates.
+Easily create a sequence of dates.
 
 > Answer to a [Stackoverflow question][1].
 
@@ -51,30 +51,30 @@ Dates from now till n days from now.
 
 ```bash
 $ seq 0 3 | date-seq
-wo 22 jul 2020 17:20:16 CEST
-do 23 jul 2020 17:20:16 CEST
-vr 24 jul 2020 17:20:16 CEST
-za 25 jul 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+vr 12 feb 2021 11:43:35 CET
+za 13 feb 2021 11:43:35 CET
+zo 14 feb 2021 11:43:35 CET
 ```
 
 Iterate with an increment from `now`.
 
 ```bash
 $ seq 0 4 12 | date-seq
-wo 22 jul 2020 17:20:16 CEST
-zo 26 jul 2020 17:20:16 CEST
-do 30 jul 2020 17:20:16 CEST
-ma  3 aug 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+ma 15 feb 2021 11:43:35 CET
+vr 19 feb 2021 11:43:35 CET
+di 23 feb 2021 11:43:35 CET
 ```
 
 How about creating a sequence from a few increments from the past till now.
 
 ```bash
 $ seq -3 0 | date-seq
-zo 19 jul 2020 17:20:16 CEST
-ma 20 jul 2020 17:20:16 CEST
-di 21 jul 2020 17:20:16 CEST
-wo 22 jul 2020 17:20:16 CEST
+ma  8 feb 2021 11:43:35 CET
+di  9 feb 2021 11:43:35 CET
+wo 10 feb 2021 11:43:35 CET
+do 11 feb 2021 11:43:35 CET
 ```
 
 Sadly seq doesn't give output when the FROM option is greater than the TILL.
@@ -85,14 +85,14 @@ In the case we want to reverse the sequence of dates we can do three things.
 $ seq  0 -1 # Does not write anything to STDOUT.
 
 $ seq -1  0 | tac | date-seq # firstly
-wo 22 jul 2020 17:20:16 CEST
-di 21 jul 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+wo 10 feb 2021 11:43:35 CET
 $ seq -1  0 | date-seq | tac # secondly
-wo 22 jul 2020 17:20:16 CEST
-di 21 jul 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+wo 10 feb 2021 11:43:35 CET
 $ seq  0  1 | date-seq '-%sdays' # thirdly
-wo 22 jul 2020 17:20:16 CEST
-di 21 jul 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+wo 10 feb 2021 11:43:35 CET
 ```
 
 Create a sequence where each increment is a month. For this we change the
@@ -100,10 +100,10 @@ template.
 
 ```bash
 $ seq 0 3 | date-seq '+%smonth'
-wo 22 jul 2020 17:20:16 CEST
-za 22 aug 2020 17:20:16 CEST
-di 22 sep 2020 17:20:16 CEST
-do 22 okt 2020 17:20:16 CEST
+do 11 feb 2021 11:43:35 CET
+do 11 mrt 2021 11:43:35 CET
+zo 11 apr 2021 12:43:35 CEST
+di 11 mei 2021 12:43:35 CEST
 ```
 
 The template is based on a combination of printf's `%s` string substitution and
@@ -116,10 +116,10 @@ It takes date compatible options after the first template argument.
 
 ```bash
 $ seq 0 3 | date-seq '-%smonth' +%b
-jul
-jun
-mei
-apr
+feb
+jan
+dec
+nov
 ```
 
 In order to change the locale one simply configures it by using the date LANG
@@ -127,10 +127,10 @@ environment variables.
 
 ```bash
 $ seq 0 3 | LANG='en-US' date-seq '-%smonth' +%b
-Jul
-Jun
-May
-Apr
+Feb
+Jan
+Dec
+Nov
 ```
 
 [1]:https://stackoverflow.com/questions/28226229/how-to-loop-through-dates-using-bash/60512491#60512491
