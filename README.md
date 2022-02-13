@@ -51,30 +51,30 @@ Dates from now till n days from now.
 
 ```bash
 $ seq 0 3 | date-seq
-do 11 feb 2021 11:43:35 CET
-vr 12 feb 2021 11:43:35 CET
-za 13 feb 2021 11:43:35 CET
-zo 14 feb 2021 11:43:35 CET
+do 11 feb 2021 12:54:01 CET
+vr 12 feb 2021 12:54:01 CET
+za 13 feb 2021 12:54:01 CET
+zo 14 feb 2021 12:54:01 CET
 ```
 
 Iterate with an increment from `now`.
 
 ```bash
 $ seq 0 4 12 | date-seq
-do 11 feb 2021 11:43:35 CET
-ma 15 feb 2021 11:43:35 CET
-vr 19 feb 2021 11:43:35 CET
-di 23 feb 2021 11:43:35 CET
+do 11 feb 2021 12:54:01 CET
+ma 15 feb 2021 12:54:01 CET
+vr 19 feb 2021 12:54:01 CET
+di 23 feb 2021 12:54:01 CET
 ```
 
 How about creating a sequence from a few increments from the past till now.
 
 ```bash
 $ seq -3 0 | date-seq
-ma  8 feb 2021 11:43:35 CET
-di  9 feb 2021 11:43:35 CET
-wo 10 feb 2021 11:43:35 CET
-do 11 feb 2021 11:43:35 CET
+ma  8 feb 2021 12:54:01 CET
+di  9 feb 2021 12:54:01 CET
+wo 10 feb 2021 12:54:01 CET
+do 11 feb 2021 12:54:01 CET
 ```
 
 Sadly seq doesn't give output when the FROM option is greater than the TILL.
@@ -85,14 +85,14 @@ In the case we want to reverse the sequence of dates we can do three things.
 $ seq  0 -1 # Does not write anything to STDOUT.
 
 $ seq -1  0 | tac | date-seq # firstly
-do 11 feb 2021 11:43:35 CET
-wo 10 feb 2021 11:43:35 CET
+do 11 feb 2021 12:54:01 CET
+wo 10 feb 2021 12:54:01 CET
 $ seq -1  0 | date-seq | tac # secondly
-do 11 feb 2021 11:43:35 CET
-wo 10 feb 2021 11:43:35 CET
+do 11 feb 2021 12:54:01 CET
+wo 10 feb 2021 12:54:01 CET
 $ seq  0  1 | date-seq '-%sdays' # thirdly
-do 11 feb 2021 11:43:35 CET
-wo 10 feb 2021 11:43:35 CET
+do 11 feb 2021 12:54:01 CET
+wo 10 feb 2021 12:54:01 CET
 ```
 
 Create a sequence where each increment is a month. For this we change the
@@ -100,10 +100,10 @@ template.
 
 ```bash
 $ seq 0 3 | date-seq '+%smonth'
-do 11 feb 2021 11:43:35 CET
-do 11 mrt 2021 11:43:35 CET
-zo 11 apr 2021 12:43:35 CEST
-di 11 mei 2021 12:43:35 CEST
+do 11 feb 2021 12:54:01 CET
+do 11 mrt 2021 12:54:01 CET
+zo 11 apr 2021 13:54:01 CEST
+di 11 mei 2021 13:54:01 CEST
 ```
 
 The template is based on a combination of printf's `%s` string substitution and
