@@ -97,4 +97,9 @@ environment variables.
 seq 0 3 | LANG='en-US' date-seq '-%smonth' +%b
 ```
 
+## License
+
+GPL-3.0
+
+
 [1]:https://stackoverflow.com/questions/28226229/how-to-loop-through-dates-using-bash/60512491#60512491
