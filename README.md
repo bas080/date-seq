@@ -41,7 +41,7 @@ seq 0 3 # Contains the zero
 ```
 
 ```bash bash
-seq 0 4 12 # With an different increment than 1
+seq 0 4 12 # With a different increment than 1
 ```
 ```
 0
@@ -71,10 +71,10 @@ Dates from now till n days from now.
 seq 0 3 | date-seq
 ```
 ```
-zo 13 feb 2022 11:26:48 CET
-ma 14 feb 2022 11:26:48 CET
-di 15 feb 2022 11:26:48 CET
-wo 16 feb 2022 11:26:48 CET
+zo 13 feb 2022 11:28:17 CET
+ma 14 feb 2022 11:28:17 CET
+di 15 feb 2022 11:28:17 CET
+wo 16 feb 2022 11:28:17 CET
 ```
 
 Iterate with an increment from `now`.
@@ -83,10 +83,10 @@ Iterate with an increment from `now`.
 seq 0 4 12 | date-seq
 ```
 ```
-zo 13 feb 2022 11:26:48 CET
-do 17 feb 2022 11:26:48 CET
-ma 21 feb 2022 11:26:48 CET
-vr 25 feb 2022 11:26:48 CET
+zo 13 feb 2022 11:28:17 CET
+do 17 feb 2022 11:28:17 CET
+ma 21 feb 2022 11:28:17 CET
+vr 25 feb 2022 11:28:17 CET
 ```
 
 How about creating a sequence from a few increments from the past till now.
@@ -95,10 +95,10 @@ How about creating a sequence from a few increments from the past till now.
 seq -3 0 | date-seq
 ```
 ```
-do 10 feb 2022 11:26:48 CET
-vr 11 feb 2022 11:26:48 CET
-za 12 feb 2022 11:26:48 CET
-zo 13 feb 2022 11:26:48 CET
+do 10 feb 2022 11:28:17 CET
+vr 11 feb 2022 11:28:17 CET
+za 12 feb 2022 11:28:17 CET
+zo 13 feb 2022 11:28:17 CET
 ```
 
 `seq` doesn't give output when the FROM option is greater than the TILL.
@@ -124,10 +124,10 @@ template.
 seq 0 3 | date-seq '+%smonth'
 ```
 ```
-zo 13 feb 2022 11:26:48 CET
-zo 13 mrt 2022 11:26:48 CET
-wo 13 apr 2022 12:26:48 CEST
-vr 13 mei 2022 12:26:48 CEST
+zo 13 feb 2022 11:28:17 CET
+zo 13 mrt 2022 11:28:17 CET
+wo 13 apr 2022 12:28:17 CEST
+vr 13 mei 2022 12:28:17 CEST
 ```
 
 The template is based on a combination of printf's `%s` string substitution and

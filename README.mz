@@ -25,7 +25,7 @@ seq 0 3 # Contains the zero
 ```
 
 ```bash bash
-seq 0 4 12 # With an different increment than 1
+seq 0 4 12 # With a different increment than 1
 ```
 
 ```bash bash
